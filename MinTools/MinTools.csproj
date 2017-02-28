@@ -34,6 +34,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MinTools\Extensions.cs" />
     <Compile Include="MinTools\MinSignal.cs" />
+    <Compile Include="MinTools\Randomizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MinTools\" />
