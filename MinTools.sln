@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinTools", "MinTools\MinTools.csproj", "{8F4EBEEA-0E8C-49B3-A26A-0F18B6D6B242}"
+EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "min.tools", "min.tools\min.tools.nuproj", "{F85D7714-EC2A-4979-8A9F-72A1B4A826AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D543ACF5-3A6C-4344-98DF-897129DB6DB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F4EBEEA-0E8C-49B3-A26A-0F18B6D6B242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4EBEEA-0E8C-49B3-A26A-0F18B6D6B242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4EBEEA-0E8C-49B3-A26A-0F18B6D6B242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4EBEEA-0E8C-49B3-A26A-0F18B6D6B242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85D7714-EC2A-4979-8A9F-72A1B4A826AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85D7714-EC2A-4979-8A9F-72A1B4A826AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85D7714-EC2A-4979-8A9F-72A1B4A826AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85D7714-EC2A-4979-8A9F-72A1B4A826AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D543ACF5-3A6C-4344-98DF-897129DB6DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D543ACF5-3A6C-4344-98DF-897129DB6DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D543ACF5-3A6C-4344-98DF-897129DB6DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D543ACF5-3A6C-4344-98DF-897129DB6DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
