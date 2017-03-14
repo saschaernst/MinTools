@@ -1,77 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MinMVC
+namespace MinTools
 {
 	public static class Extensions
 	{
-		public static void Each<T>(this IEnumerable<T> enumerable, Action<T> handler)
+		public static void Each<T> (this IEnumerable<T> enumerable, Action<T> handler)
 		{
-			foreach (T item in enumerable)
-			{
+			foreach (T item in enumerable) {
 				handler(item);
 			}
 		}
 
-		public static TValue Retrieve<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
+		public static TValue Retrieve<TKey, TValue> (this IDictionary<TKey, TValue> dictionary, TKey key)
 		{
 			return Retrieve(dictionary, key, Activator.CreateInstance<TValue>);
 		}
 
-		public static TValue Retrieve<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Func<TValue> defFunc)
+		public static TValue Retrieve<TKey, TValue> (this IDictionary<TKey, TValue> dictionary, TKey key, Func<TValue> defFunc)
 		{
 			TValue value;
 
-			if (!dictionary.TryGetValue(key, out value))
-			{
+			if (!dictionary.TryGetValue(key, out value)) {
 				dictionary[key] = value = defFunc();
 			}
 
 			return value;
 		}
 
-		public static bool AddNewEntry<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
+		public static bool AddNewEntry<TKey, TValue> (this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
 			bool isKeyNew = !dictionary.ContainsKey(key);
 
-			if (isKeyNew)
-			{
+			if (isKeyNew) {
 				dictionary[key] = value;
 			}
 
 			return isKeyNew;
 		}
 
-		public static bool UpdateEntry<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
+		public static bool UpdateEntry<TKey, TValue> (this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
 			bool isKeyExisting = dictionary.ContainsKey(key);
 
-			if (isKeyExisting)
-			{
+			if (isKeyExisting) {
 				dictionary[key] = value;
 			}
 
 			return isKeyExisting;
 		}
 
-		public static TValue Withdraw<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key)
+		public static TValue Withdraw<TKey, TValue> (this IDictionary<TKey, TValue> dictionary, TKey key)
 		{
 			TValue value;
 
-			if (dictionary.TryGetValue(key, out value))
-			{
+			if (dictionary.TryGetValue(key, out value)) {
 				dictionary.Remove(key);
 			}
 
 			return value;
 		}
 
-		public static bool IsEmpty<T>(this ICollection<T> collection)
+		public static bool IsEmpty<T> (this ICollection<T> collection)
 		{
 			return collection.Count == 0;
 		}
 
-		public static T Pop<T>(this IList<T> list)
+		public static T Pop<T> (this IList<T> list)
 		{
 			T item = list[0];
 			list.RemoveAt(0);

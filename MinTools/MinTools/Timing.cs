@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MinMVC
+namespace MinTools
 {
 	public class Timing
 	{
