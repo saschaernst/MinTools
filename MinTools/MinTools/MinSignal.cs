@@ -22,6 +22,11 @@ namespace MinTools
 			return listeners.Remove(listener);
 		}
 
+		public bool Manage (Action listener, bool doAdd)
+		{
+			return doAdd ? Add(listener) : Remove(listener);
+		}
+
 		public void Call ()
 		{
 			foreach (var listener in listeners) {
@@ -49,6 +54,11 @@ namespace MinTools
 			return listeners.Remove(listener);
 		}
 
+		public bool Manage (Action<T> listener, bool doAdd)
+		{
+			return doAdd ? Add(listener) : Remove(listener);
+		}
+
 		public void Call (T p1)
 		{
 			foreach (var listener in listeners) {
@@ -74,6 +84,11 @@ namespace MinTools
 		public bool Remove (Action<T, U> listener)
 		{
 			return listeners.Remove(listener);
+		}
+
+		public bool Manage (Action<T, U> listener, bool doAdd)
+		{
+			return doAdd ? Add(listener) : Remove(listener);
 		}
 
 		public void Call (T p1, U p2)
