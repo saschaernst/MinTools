@@ -5,12 +5,20 @@ namespace MinTools
 {
 	public interface IMinSignal
 	{
+		int Count { get; }
+
 		void Reset ();
 	}
 
 	public class MinSignal : IMinSignal
 	{
 		readonly HashSet<Action> listeners = new HashSet<Action>();
+
+		public int Count {
+			get {
+				return listeners.Count;
+			}
+		}
 
 		public bool Add (Action listener)
 		{
@@ -44,6 +52,12 @@ namespace MinTools
 	{
 		readonly HashSet<Action<T>> listeners = new HashSet<Action<T>>();
 
+		public int Count {
+			get {
+				return listeners.Count;
+			}
+		}
+
 		public bool Add (Action<T> listener)
 		{
 			return listeners.Add(listener);
@@ -75,6 +89,12 @@ namespace MinTools
 	public class MinSignal<T, U> : IMinSignal
 	{
 		readonly HashSet<Action<T, U>> listeners = new HashSet<Action<T, U>>();
+
+		public int Count {
+			get {
+				return listeners.Count;
+			}
+		}
 
 		public bool Add (Action<T, U> listener)
 		{
